@@ -159,7 +159,6 @@ class DB_Functions {
     
     public function getUserName($email){
         $link = $this->db->connect();
-        //$result = mysqli_query($link,"Select firstname FROM myaddlasusers WHERE email = '$email'");
         $result = mysqli_query($link,"Select firstname FROM myaddlasusers WHERE email = '$email'");
         $row = mysqli_fetch_array($result);
         
@@ -177,7 +176,6 @@ class DB_Functions {
      */
     public function emailConfirmation($email,$code){
         $link = $this->db->connect();
-        //$query = mysqli_query($link, "SELECT * FROM myaddlasusers WHERE 'email' = '$email'");
         $query = mysqli_query($link, "SELECT confirmed_code FROM myaddlasusers WHERE email = '$email'");
         //while($row = mysqli_fetch_assoc($query)){
         $row = mysqli_fetch_assoc($query);
